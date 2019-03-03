@@ -4,18 +4,21 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "10.15.1",
+    "node": "10.15.2",
     "npm": "6.4.1",
     "yarn": "1.13.0"
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^4.1.0",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.16",
